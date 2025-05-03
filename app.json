@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "cue-app-mobile",
-    "slug": "cue-app-mobile",
+    "name": "CueApp",
+    "slug": "CueApp",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -13,13 +13,21 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "CueApp needs access to your location to find billiard halls near you."
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION"
+      ],
+      "package": "com.yourcompany.cueapp",
       "edgeToEdgeEnabled": true
     },
     "web": {
