@@ -1,9 +1,7 @@
 import axios from 'axios';
 
-// Replace with your Google Places API key
-const API_KEY = 'YOUR_GOOGLE_PLACES_API_KEY';
+const API_KEY = process.env.EXPO_PUBLIC_GOOGLE_MAPS_API_KEY;
 
-// Get nearby billiard halls
 export const getNearbyBilliardHalls = async (latitude, longitude, radius = 5000) => {
   try {
     const url = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${latitude},${longitude}&radius=${radius}&type=bar&keyword=billiards+pool+hall&key=${API_KEY}`;
@@ -21,7 +19,6 @@ export const getNearbyBilliardHalls = async (latitude, longitude, radius = 5000)
   }
 };
 
-// Get place details by ID
 export const getPlaceDetails = async (placeId) => {
   try {
     const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=name,formatted_address,formatted_phone_number,opening_hours,rating,reviews,website,price_level,photos,geometry&key=${API_KEY}`;
